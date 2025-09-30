@@ -1,2 +1,5 @@
-# Temporary-library
-这个库很随意
+# **Temporary-library**
+> [声明]：这个库很随意，作者只是用他来学习如何创建github仓库
+> 
+> 创建时间：2025/9/30
+---
