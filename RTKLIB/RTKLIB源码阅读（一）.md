@@ -132,6 +132,7 @@ static int ephpos(gtime_t time, gtime_t teph, int sat, const nav_t *nav,int iode
 
 ### **4 . eph2pos()**
 > 1.函数定义：void eph2pos(gtime_t time, const eph_t *eph, double *rs, double *dts,double *var)
+> 
 > 2.函数功能：将广播星历数据转换为卫星在指定时刻的位置、时钟偏差及误差方差（GPS、北斗、伽利略、QZSS、IRNSS）
 
 - 参数说明：
@@ -161,4 +162,5 @@ static int ephpos(gtime_t time, gtime_t teph, int sat, const nav_t *nav,int iode
 - 输出	var	    每个卫星的位置+时钟误差方差（评估精度）
 
 - 输出	svh	    每个卫星的健康状态标志（0=正常，其他值=异常，-1=无数据）
+
 
