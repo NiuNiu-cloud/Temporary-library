@@ -150,7 +150,8 @@ static int ephpos(gtime_t time, gtime_t teph, int sat, const nav_t *nav,int iode
 > 专用于SBAS卫星的星历转位置函数。
 
 ### **7 . satposs()**
-> 批量处理多个卫星的位置、速度和时钟参数
+> 批量处理多个卫星的位置、速度和时钟参数。
+> 它是satpos函数的 “上层批量调用器”。
 
 - teph:	筛选星历的参考时间（GPS时）
 - obs	: 观测数据结构体数组（存储每个卫星的观测值，如伪距）
@@ -161,6 +162,7 @@ static int ephpos(gtime_t time, gtime_t teph, int sat, const nav_t *nav,int iode
 - dts	: 卫星时钟数组，按卫星分组：每组2个值，分别是时钟偏差（s）和时钟漂移率（s/s）
 - var	: 每个卫星的位置+时钟误差方差（评估精度）
 - svh	: 每个卫星的健康状态标志（0=正常，其他值=异常，-1=无数据）
+
 
 
 
