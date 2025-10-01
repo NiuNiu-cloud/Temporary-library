@@ -27,7 +27,7 @@
 
 > satpos()函数是卫星位置计算的 “路由器”，通过抽象不同星历算法的差异，提供了统一的调用接口。
 
-1. ### **satpos()**
+### **1 . satpos()**
 
 ```C
 int satpos(gtime_t time, gtime_t teph, int sat, int ephopt,
@@ -57,7 +57,6 @@ int satpos(gtime_t time, gtime_t teph, int sat, int ephopt,
     return 0;       // 计算失败
 }
 ```
-
 #### 1 . 函数参数说明
 - gtime_t time：观测时间（接收端接收信号的时间）
 - gtime_t teph：星历参考时间
@@ -71,7 +70,7 @@ int satpos(gtime_t time, gtime_t teph, int sat, int ephopt,
 
 ---
 
-2. ### **ephpos()**
+### **2 . ephpos()**
 > - ephpos()函数根据卫星所属系统，选择对应的星历数据和解析算法，计算卫星在指定时刻的位置、速度、钟差及相关参数。
 ```C
 /* 通过广播星历获取的卫星位置和时钟（信息）-----------------------*/
@@ -125,13 +124,13 @@ static int ephpos(gtime_t time, gtime_t teph, int sat, const nav_t *nav,int iode
     return 1;
 }
 ```
-3. ### **seleph()**
+### **3 . seleph()**
 > static eph_t *seleph(gtime_t time, int sat, int iode, const nav_t *nav)
 - 根据卫星编号去星历数据里找到这个卫星的星历！！！
 - 找到之后返回一个指向这个星历数据的指针。
 ---
 
-4. ### **eph2pos()**
+### **4 . eph2pos()**
 > 1.函数定义：void eph2pos(gtime_t time, const eph_t *eph, double *rs, double *dts,double *var)
 > 2.函数功能：将广播星历数据转换为卫星在指定时刻的位置、时钟偏差及误差方差（GPS、北斗、伽利略、QZSS、IRNSS）
 
@@ -141,11 +140,15 @@ static int ephpos(gtime_t time, gtime_t teph, int sat, const nav_t *nav,int iode
     - rs：输出参数，卫星在 ECEF 坐标系（地心地固坐标系）中的位置（x,y,z，单位米）
     - dts：输出参数，卫星时钟偏差（单位秒）
     - var：输出参数，卫星位置和时钟的方差（单位平方米，用于精度评估）
-- ### **geph2pos()**
+  ---
+  
+### **5 . geph2pos()**
 > 专用于格洛纳斯卫星的星历转位置函数。
-- ### **seph2pos()**
+
+### **6 . seph2pos()**
 > 专用于SBAS卫星的星历转位置函数。
-- ### **satposs()**
+
+### **7 . satposs()**
 > 批量处理多个卫星的位置、速度和时钟参数
 
 - 输入	teph	筛选星历的参考时间（GPS时）
@@ -158,3 +161,4 @@ static int ephpos(gtime_t time, gtime_t teph, int sat, const nav_t *nav,int iode
 - 输出	var	    每个卫星的位置+时钟误差方差（评估精度）
 
 - 输出	svh	    每个卫星的健康状态标志（0=正常，其他值=异常，-1=无数据）
+
