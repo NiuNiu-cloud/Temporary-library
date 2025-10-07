@@ -33,3 +33,30 @@ class 类名
 
 ## 构造函数
 > 构造函数的命名和类是一样的，这就使得创创建对象的同时完成变量初始化。
+
+## 成员函数
+> 在类的内部声明和定义（或仅声明，在类外定义）的函数。
+
+```C+
+class Circle 
+{
+    private:
+        double radius; // 私有成员
+    public:
+        // 成员函数：在类内声明并定义
+        void setRadius(double r) 
+        {
+            radius = r; // 直接访问私有成员
+        }
+
+        // 成员函数：仅声明，类外定义
+        double getArea();
+};
+
+// 类外定义成员函数（需加类名限定符::）
+double Circle::getArea() 
+{
+    return 3.14 * radius * radius;
+    // 通过this指针访问当前对象的radius
+}
+```

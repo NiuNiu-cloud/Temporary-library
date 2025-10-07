@@ -1,6 +1,9 @@
 # 重载函数
 
 在C++中，函数重载（Function Overloading）是指在同一个作用域内，可以可以定义多个同名函数，只要它们的参数列表不同（参数个数、参数类型或参数顺序不同）。编译器会根据调用时提供的实参自动匹配到对应的函数。
+
+> my understand: ==函数名可以一样，但是输入参数不能一样。==
+
 ```C++
 #include <iostream>
 using namespace std;
@@ -36,4 +39,4 @@ int main(void)
 
 # 重载运算符
 
-
+> 不好理解
