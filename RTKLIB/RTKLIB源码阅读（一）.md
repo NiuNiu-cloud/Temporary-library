@@ -16,6 +16,7 @@
 
 
 ## 三 . 程序运行流程
+![](https://pic-bed-1316053657.cos.ap-nanjing.myqcloud.com/img/25a7656c3b0148f0ba14f6365027cf0e.png)
 
 ![image-20231016123911526](https://pic-bed-1316053657.cos.ap-nanjing.myqcloud.com/img/image-20231016123911526.png)
 
@@ -162,6 +163,7 @@ static int ephpos(gtime_t time, gtime_t teph, int sat, const nav_t *nav,int iode
 - dts	: 卫星时钟数组，按卫星分组：每组2个值，分别是时钟偏差（s）和时钟漂移率（s/s）
 - var	: 每个卫星的位置+时钟误差方差（评估精度）
 - svh	: 每个卫星的健康状态标志（0=正常，其他值=异常，-1=无数据）
+
 
 
 
